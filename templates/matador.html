@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Matador de Monstro</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="../style/style.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="panel scores">
+                <div class="score">
+                    <h1>Jogador</h1>
+                    <div class="life-bar">
+                        <div class="life"
+                            :class="{danger: playerLife < 20}"
+                            :style="{width: playerLife + '%'}"></div>
+                    </div>
+                    <div>{{playerLife}}%</div>
+                </div>
+                <div class="score">
+                    <h1>Monstro</h1>
+                    <div class="life-bar">
+                        <div class="life"
+                        :class="{danger: monsterLife < 20}"
+                        :style="{width: monsterLife + '%'}"></div>
+                    </div>
+                    <div>{{monsterLife}}%</div>
+                </div>
+            </div>
+            <template v-if="hasFinished">
+                <div class="panel result">
+                    <label :style="colorLabelResult">
+                        {{isPlayerWinner ? 'Voce ganhou!! =)' : 'Voce perdeu!! =('}}
+                    </label>
+                </div>
+            </template>
+            <div class="panel buttons">
+
+            </div>
+            <div class="panel logs"></div>
+        </div>
+        <script src="../scripts/app.js"></script>
+    </body>
+</html>
