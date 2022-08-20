@@ -28,17 +28,33 @@
                     <div>{{monsterLife}}%</div>
                 </div>
             </div>
-            <template v-if="hasFinished">
+            <template v-if="hasResult">
                 <div class="panel result">
-                    <label :style="colorLabelResult">
+                    <label :class="colorLabelResult">
                         {{isPlayerWinner ? 'Voce ganhou!! =)' : 'Voce perdeu!! =('}}
                     </label>
                 </div>
             </template>
             <div class="panel buttons">
-
+                <template v-if="running">
+                    <button class="btn attack" @click="attacking(false)">Ataque</button>
+                    <button class="btn especial-attack" 
+                            @click="attacking(true)"
+                            :disabled="especialDisabled">
+                        Ataque Especial
+                    </button>
+                    <button class="btn heal" @click="healAndHurt" :disabled="healDisabled">Curar</button>
+                    <button class="btn give-up" @click="running = false">Desistir</button>
+                </template>
+                <button v-else @click="startGame" class="btn new-game">Iniciar Jogo</button>
             </div>
-            <div class="panel logs"></div>
+            <div class="panel logs" v-if="hasLog">
+                <ul>
+                    <li v-for="log in logs" class="log" :class="log.clazz">
+                        {{log.text}}
+                    </li>
+                </ul>
+            </div>
         </div>
         <script src="../scripts/app.js"></script>
     </body>

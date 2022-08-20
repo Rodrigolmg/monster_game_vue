@@ -34,34 +34,145 @@ html{
     align-items: center;
 }
 
-.score h1{
+.score h1 {
     font-weight: 300;
     font-size: 1.6rem;
 }
 
-.life-bar{
+.life-bar {
     width: 80%;
     height: 20px;
     border: 1px solid #AAA;
 }
 
-.life-bar .life{
+.life-bar .life {
     display: flex;
     justify-content: center;
     height: 100%;
     background-color: green;
 }
 
-.life-bar .life.danger{
+.life-bar .life.danger {
     background-color: red;
 }
 
 /* RESULTADO */
 
-.red{
+.result {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.result .lose {
     color: red;
 }
 
-.green{
+.result .win{
     color: green;
+}
+
+/* BOTÕES (CONTROLE DO JOGO)*/
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.new-game {
+    background-color: #4253af;
+    color: #fff;
+}
+
+.new-game:hover {
+    background-color: #1e36be;
+    color: #fff;
+}
+
+.attack {
+    background-color: #e51c23;
+    color: #fff;
+}
+
+.attack:hover {
+    background-color: #a81419;
+    color: #fff;
+}
+
+.especial-attack {
+    background-color: #ff9800;
+    color: #000;
+}
+
+.especial-attack:disabled {
+    background-color: #868686;
+    color: #fff;
+}
+
+.especial-attack:hover:enabled {
+    background-color: #b36b00;
+    color: #fff;
+}
+
+.heal {
+    background-color: #259b24;
+    color: #fff;
+}
+
+.heal:disabled {
+    background-color: #868686;
+    color: #fff;
+}
+
+.heal:hover:enabled {
+    background-color: #146813;
+    color: #fff;
+}
+
+.give-up {
+    background-color: #BBB;
+    color: #000;
+}
+
+.give-up:hover {
+    background-color: rgb(75, 73, 73);
+    color: #fff;
+}
+
+/* LOGS */
+.logs ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.player{
+    background-color: #4253afaa;
+    color: rgb(226, 225, 223);
+}
+
+.monster {
+    background-color: #e51c23aa;
+    color: rgb(226, 225, 223);
 }
