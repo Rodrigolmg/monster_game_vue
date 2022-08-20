@@ -45,6 +45,7 @@ new Vue({
             this.hurt('monsterLife', 5, 10, especial, 'Jogador', 'Monstro', 'player')
             
             if(this.monsterLife > 0){
+                this.healDisabled = false;
                 this.hurt('playerLife', 7, 12, false, 'Monstro', 'Jogador', 'monster')
             }
 
